@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 60 5% 95%;
+    --card: 0 0% 4%;
+    --card-foreground: 60 5% 95%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 60 5% 95%;
+    --primary: 168 100% 45%;
+    --primary-foreground: 0 0% 2%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 60 5% 95%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 63%;
+    --accent: 168 100% 45%;
+    --accent-foreground: 0 0% 2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 168 100% 45%;
+    --radius: 0rem;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    cursor: none;
+    overflow-x: hidden;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  ::selection {
+    background: rgba(0, 229, 199, 0.25);
+    color: #F4F4F0;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .text-teal {
+    color: #00E5C7;
+  }
+
+  .bg-void {
+    background-color: #050505;
+  }
+
+  .bg-obsidian {
+    background-color: #0A0A0A;
+  }
+
+  .border-subtle {
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6875rem;
+    color: #00E5C7;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .section-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: #F4F4F0;
+  }
+
+  .body-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: rgba(244, 244, 240, 0.6);
+  }
+
+  .glass-panel {
+    background: #050505;
+    border: 1px solid rgba(0, 229, 199, 0.15);
+  }
+
+  .card-base {
+    background: #0A0A0A;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 2rem;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .card-base:hover {
+    border-color: rgba(0, 229, 199, 0.3);
+  }
+}
+
+@layer utilities {
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  @keyframes scroll-line {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(40px); opacity: 0; }
+  }
+
+  @keyframes rotate-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+
+  @keyframes typewriter-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  @keyframes gold-pulse {
+    0%, 100% { border-color: rgba(255, 215, 0, 0.2); }
+    50% { border-color: rgba(255, 215, 0, 0.6); }
+  }
+
+  .animate-pulse-dot {
+    animation: pulse-dot 2s infinite;
+  }
+
+  .animate-scroll-line {
+    animation: scroll-line 1.5s ease-in-out infinite;
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 60s linear infinite;
+  }
+
+  .animate-breathe {
+    animation: breathe 4s ease-in-out infinite;
+  }
+
+  .animate-gold-pulse {
+    animation: gold-pulse 3s infinite;
+  }
+}
+
+@media (hover: none) {
+  body {
+    cursor: auto;
+  }
+}
